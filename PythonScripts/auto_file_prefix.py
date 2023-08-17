@@ -1,13 +1,17 @@
 import unreal as ue
+import os
+import json
 
+prefix_mapping = {}
 
-prefix_mapping = {
-    "Blueprint":"BP_",
-    "Material": "M_",
-    "MaterialInstanceConst": "MI_",
-    "Particle_System":"PS_"
+# Get the directory of the current script
+script_dir = os.path.dirname(__file__)
 
-}
+# Join the directory with the JSON file name
+json_file_path = os.path.join(script_dir, "prefix_mapping.json")
+
+with open(json_file_path,"r") as json_file:
+    prefix_mapping=json.loads(json_file.read())
 
 def add_prefix ():
     #instance of unreal class
