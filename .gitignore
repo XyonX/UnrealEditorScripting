@@ -2,3 +2,6 @@ Binaries/
 Intermediate/
 Saved/
 .vs/
+.idea/
+Content/
+!Content/EditorScripting
